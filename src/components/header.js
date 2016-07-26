@@ -1,4 +1,5 @@
 import React from 'react';
+import AutoComplete from 'material-ui/AutoComplete';
 
 
 class Header extends React.Component{
@@ -7,7 +8,7 @@ class Header extends React.Component{
       headerStyle:{
         width:'100%',
         height:'200px',
-        backgroundColor:'blue',
+        backgroundColor:'#00bcd4',
         margin:'0',
         padding:'0',
         display:'block',
@@ -20,7 +21,7 @@ class Header extends React.Component{
     let style = this.getStyles();
     return(
 
-        <h1 style={style.headerStyle}>百日百页面</h1>
+        <h1 style={style.headerStyle}>MY DEMO</h1>
 
     )
   }

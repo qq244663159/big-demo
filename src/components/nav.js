@@ -15,47 +15,60 @@ class Nav extends React.Component{
   }
 
   getStyles(){
-    let show = this.state.show ? "-100%" : "0";
+    let show = this.state.show ? "none" : "block";
     return{
       navStyle:{
         width:'50px',
         height:'30px',
-        backgroundColor:'#ccc',
+        fontWeight:'900',
+        fontSize:'40px',
         display:'block',
         textAlign:'center',
         lineHeight:'30px',
         position:'absolute',
-        top:'30px',
-        left:'30px',
-        color:'black'
+        top:'50px',
+        left:'50px',
+        color:'black',
+        textDecoration:'none'
       },
-      ulStyle:{
-        width:'30%',
-        height:'100%',
-        position:'absolute',
+      smallStyle:{
+        width:'300px',
+        height:'1000px',
+        position:'fixed',
         top:'0',
         left:'0',
         padding:'0',
+        backgroundColor:'#00bcd4',
+        opacity:'1'
 
       },
       liStyle:{
         listStyle:'none',
         lineHeight:'50px',
 
-        width:'30%',
+        width:'100%',
         height:'50px',
-        backgroundColor:'yellow',
-
-
+        fontSize:'30px',
+        fontWeight:'900',
+        margin:'30px 0 30px 30px',
+      },
+      liFirst:{
+        marginTop:'100px'
       },
       divStyle:{
-        width:show,
+        display:show,
         position:'absolute',
         top:'0',
         left:'0',
+        bottom:'0',
+        right:'0',
         backgroundColor:'#ccc',
         opacity:'0.5',
 
+      },
+      aStyle:{
+        color:'white',
+        textDecoration:'none'
       }
     }
   }
@@ -63,13 +76,15 @@ class Nav extends React.Component{
     let style = this.getStyles();
     return(
       <div>
-      <button style={style.navStyle} onClick={this.handleToggle.bind(this)}>导航</button>
-        <div style={style.divStyle} onClick={this.handleToggle.bind(this)}>
-          <ul>
-            <li style={style.liStyle}>first</li>
-            <li style={style.liStyle}>secound</li>
-            <li style={style.liStyle}>third</li>
-          </ul>
+        <a href="#" style={style.navStyle} onClick={this.handleToggle.bind(this)}>≡</a>
+        <div style={style.divStyle}  onClick={this.handleToggle.bind(this)}>
+          <div style={style.smallStyle}>
+            <ul style={style.liFirst}>
+              <li style={style.liStyle}><a href="#" style={style.aStyle}>目录</a></li>
+              <li style={style.liStyle}><a href="#" style={style.aStyle}>帮助</a></li>
+              <li style={style.liStyle}><a href="#" style={style.aStyle}>联系我</a></li>
+              </ul>
+          </div>
         </div>
       </div>
     )
